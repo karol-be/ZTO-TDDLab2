@@ -153,6 +153,7 @@ namespace Tests.TDDLab.Core
                     Act();
 
                     // assert
+                    using var _ = new AssertionScope();
                     _sut.Products.Should().Contain(Lines[0].ProductName, Lines[0].Money);
                     _sut.Products.Should().Contain(Lines[1].ProductName, Lines[1].Money);
                 }
